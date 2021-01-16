@@ -31,6 +31,9 @@ def welcome():
     else:
         return redirect(url_for('login'))
 
+@app.route('/forgetpwd')
+def forgetpwd():
+    return render_template('forgetpwd.html')
 
 @app.route('/result', methods=['POST', 'GET'])
 def result():
@@ -46,7 +49,6 @@ def result():
         person["name"] = data.val()[person["uid"]]["name"]
         return redirect(url_for('welcome'))
     return redirect(url_for('login'))
-
 
 @app.route('/register', methods=['POST', 'GET'])
 def register():
@@ -66,6 +68,15 @@ def register():
             return redirect(url_for('login'))
         return render_template('signup.html')
     return render_template('signup.html')
+
+@app.route('/resetpwd', methods=['POST', 'GET'])
+def resetpwd():
+    if request.form == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        reset_email = auth.send_password_reset_email(email)
+        return render_template('login.html')
+    return render_template('login.html')
 
 if __name__ == '__main__':
 	app.run(debug=True)

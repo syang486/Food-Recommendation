@@ -7,8 +7,9 @@
 <body>
     <div class="wrapper fadeInDown">
         <div id="formContent">
+
             <!-- Tabs Titles -->
-            <h2 class="active"> Sign In </h2>
+            <a href="/"><h2 class="incative underlineHover"> Sign In </h2>
             <a href="/signup"><h2 class="inactive underlineHover"> Sign Up </h2></a>
 
             <!-- Icon -->
@@ -17,16 +18,12 @@
             </div>
 
             <!-- Login Form -->
-            <form action="/result" method="POST">
+            <form action="/resetpwd" method="POST">
+                <input type="text" id="name" class="fadeIn second" name="name" placeholder="name">  
                 <input type="email" id="login" class="fadeIn second" name="email" placeholder="email">
-                <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
-                <input type="submit" class="fadeIn fourth" name="submit" value="Log In">
+                <input type="submit" class="fadeIn fourth" name="submit" value="Reset the Password">
             </form>
 
-            <!-- Forget Password-->
-            <div id="formFooter">
-                <a class="underlineHover" href="/forgetpwd">Forgot Password?</a>
-            </div>
   </div>
 </div>
 </body>
