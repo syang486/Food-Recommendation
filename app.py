@@ -36,6 +36,10 @@ def validate_image(stream):
 def login():
     return render_template('login.html')
 
+@app.route('/map')
+def map():
+    return render_template('map.html')
+
 @app.route('/signup')
 def signup():
     return render_template('signup.html')
