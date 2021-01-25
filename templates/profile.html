@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'profile.css')}}">
+ 	<link rel="stylesheet" type="text/css" href="../static/profile.css">
+</head>
+<body>
+<div class="wrapper">
+<div id="formContent">
+<form action="/updateProfile" method="POST" enctype="multipart/form-data">
+    <h2>Users' Profile</h2>
+    <label for="name">Name: {{name}}</label><br><p>
+    <label for="email">Email: {{emailAddress}}</label><br><p>
+    <label for="selfie">Upload Selfie: </label>
+    <input type="file" name="selfie" accept="image/*"><br><p>
+    <input type="submit" name="submit" value="Update">
+</form>
+</div>
+</div>
+<hr>
+{% for file in files%}
+    <img src="{{url_for('upload', filename=file) }}" style="width: 64px">
+{% endfor%}
+</body>
+</html>
