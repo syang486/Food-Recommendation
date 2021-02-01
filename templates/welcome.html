@@ -10,10 +10,10 @@
 
 	<title>Food Recommendation App</title>
 </head>
-<body>
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<body style="background-color: #FFDAB9">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
-		  <a class="navbar-brand" href="#">Expand to navigate to different pages</a>
+		  <a class="navbar-brand" href="#">Navigate to different pages</a>
 		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		  </button>
@@ -23,7 +23,7 @@
 				<a class="nav-link active" aria-current="page" href="#">Login Page</a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link" href="/map">Maps Page</a>
+				<a class="nav-link" href="/map">Map</a>
 			  </li>
 			  <li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -48,19 +48,44 @@
 		</div>
 	</nav>
 	
-	
-<div class="main">
-	<h1 class="name">Hi, {{name}}</h1><hr style="width: 30%">
-	<h3 class="email">Welcome to Food Recommendation</h3>
+
+
+</div>	
+<div class="main" style="background-color: #FFDAB9; text-align: left">
+	<h1 class="name" style="font-size: 40px; color: #4B3A35;font-weight: 400px">Eating Is<br>Butter Together</h1>
+	<br>
+	<h3 class="email" style="font-size: 20px; color: #4B3A35; font-weight: bold">Find, Share, and Recommend Restaurants with your friends</h3>
+	<br>
+	<br>
 	<form action="/profile">
-    	<input type="submit" value="Continue"/>
+    	<input type="submit" style="color:Black; background-color: #E5989B; border: none; font-weight: 400; font-weight: bold; width: 30%; height: 15%; border-radius: 15px" value="Start Now!">
 	</form>
 </div>
 
+<div class="ourStory" style="background-color: #FFF9F4; text-align: left; padding: 200px">
+	<br>
+	<br>
+	<br>
+	<h1 class="name" style="font-size: 40px; color: #4B3A35;font-weight: bolder">Our Story</h1>
+	<br>
+	<h3 class="email" style="font-size: 20px; color: #4B3A35">We are a group passionate about finding good food and fostering friendship</h3>
+	<br>
+	<br>
+</div>
 
-		<!-- Option 1: Bootstrap Bundle with Popper -->
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-		
+<div class="howItWorks" style="background-color: #FFB9B9; padding: 200px">
+	<br>
+	<br>
+	<h1 class="name" style="font-size: 40px; color: #4B3A35;font-weight: bolder; text-align: center">How It Works</h1>
+	<br>
+	<h3 class="email" style="font-size: 20px; color: #4B3A35">Add in illustrations later here</h3>
+	<br>
+	<br>
+</div>
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
 
 </body>
 </html>
