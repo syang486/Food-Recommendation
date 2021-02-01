@@ -3,6 +3,7 @@ from flask import *
 import imghdr
 import os
 from werkzeug.utils import secure_filename
+import tempfile
 app = Flask(__name__)
 
 config = {
@@ -56,8 +57,9 @@ def forgetpwd():
     return render_template('forgetpwd.html')
 
 @app.route('/profile')
-def home():
-    return render_template('profile.html', name = person["name"], emailAddress = person["email"])
+def profile():
+    selfie = os.listdir(app.config['UPLOAD_PATH'])
+    return render_template('profile.html', selfie = selfie, name = person["name"], emailAddress = person["email"])
 
 @app.route('/result', methods=['POST', 'GET'])
 def result():
@@ -104,21 +106,22 @@ def resetpwd():
         return render_template('login.html')
     return render_template('login.html')
 
-@app.route('/updateProfile', methods=['POST', 'GET'])
+@app.route('/profile', methods=['POST', 'GET'])
 def updateProfile():
-    if request.form == 'POST':
-        uploaded_selfie = request.files['selfie']
-        filename = secure_filename(uploaded_selfie.filename)
-        if filename != '':
-            file_ext = os.path.splitext(filename)[1]
-            if file_ext not in app.config['UPLOAD_EXTENSIONS'] or file_ext != validate_image(uploaded_selfie.stream):
-                abort(400)
-            uploaded_selfie.save(os.path.join(app.config['UPLOAD_PATH'], filename))
-    return redirect(url_for('updateProfile'))
+    uploaded_selfie = request.files['selfie']
+    filename = secure_filename(uploaded_selfie.filename)
+    if filename != '':
+        file_ext = os.path.splitext(filename)[1]
+        if file_ext not in app.config['UPLOAD_EXTENSIONS'] or file_ext != validate_image(uploaded_selfie.stream):
+            abort(400)
+        uploaded_selfie.save(os.path.join(app.config['UPLOAD_PATH'], filename))
+    return redirect(url_for('profile'))
 
 @app.route('/uploads/<filename>')
 def upload(filename):
     return send_from_directory(app.config['UPLOAD_PATH'], filename)
 
+
 if __name__ == '__main__':
 	app.run(debug=True)
+
