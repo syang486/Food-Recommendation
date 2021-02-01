@@ -15,15 +15,19 @@ body{
 	margin-left: 20vw;
 }
 
-.name{
-	font-size: 300%;
+#name{
+	font-weight: 400px;
 	font-weight: bold;
 	text-align: left;
 	font-family: "Poppins";
+	color:rgb(189, 33, 118);
+	font-size: 40px;
 }
 
-.email{
+#email{
 	font-size: 150%;
-	color: #E5989B;
+	color: #211777;
 	font-family: "Poppins";
+	font-size: 20px; 
+	font-weight: bold;
 }
