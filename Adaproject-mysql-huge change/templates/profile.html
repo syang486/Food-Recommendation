@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nom-Nom Profile</title>
+	 <link rel="stylesheet" type="text/css" href="../static/profile.css">
+	 
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+</head>
+<script type="text/javascript">
+function myFunction(){
+    var msg = confirm("Are you sure that you want to log out?");
+    if (msg) {
+        window.location.href = "/logout";
+    }
+}
+</script>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light" style="width: 100%;">
+		<div class="container-fluid">
+		    <a class="navbar-brand">Logo picture and app name: Nom-Nom</a>
+		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		    </button>
+		    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			    <li class="nav-item">
+				    <a class="nav-link active" aria-current="page" href="/welcomeback">Home</a>
+			    </li>
+			    <li class="nav-item">
+				    <a class="nav-link" href="/map">Our Map</a>
+			    </li>
+			    <li class="nav-item">
+				    <a class="nav-link" href="/community">Community</a>
+			    </li>
+				<li class="nav-item">
+					<a class="nav-link" href = "javascript:void(0)" onclick="myFunction()">Log Out</a>
+				</li>			
+
+                <!--
+			    <li class="nav-item dropdown">
+				    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				        Dropdown
+				    </a>
+				    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+				        <li><a class="dropdown-item" href="#">Action</a></li>
+				        <li><a class="dropdown-item" href="#">Another action</a></li>
+				        <li><hr class="dropdown-divider"></li>
+				        <li><a class="dropdown-item" href="#">Something else here</a></li>
+				    </ul>
+			    </li>
+			    <li class="nav-item">
+				    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+			    </li>                
+                -->
+
+			    </ul>
+			    <form class="d-flex">
+			        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+			        <button class="btn btn-outline-success" type="submit">Search</button>
+			    </form>
+		    </div>
+		</div>
+	</nav>
+
+
+<div id="img">
+<img src="{{ url_for('upload', filename=selfie) }}" style="width: 100px; height: 100px">
+</div>
+
+
+<h3 id="img-text" style="font-size: 20px; color: #4B3A35">Selfie</h3>
+
+<form action="/manageProfile">
+    <input type="submit" id="button" style="right:150px; top:350px;" value="Manage Profile">
+</form>
+<form action="/changepwd">
+    <input type="submit" id="button" style="right:150px; top:450px;"value="Manage Password">
+</form>
+
+
+<div class="profile" style="text-align: left; padding: 75px">
+	<h1 id="name" style="font-size: 40px; color: #4B3A35;font-weight: bolder">{{name}}'s Profile</h1>
+	
+	<br>
+	<h3 id="email" style="font-size: 20px; color: #4B3A35">Email: {{email}}</h3>
+	<h3 id="email" style="font-size: 20px; color: #4B3A35">Date of Birth: {{birth}}</h3>
+	<h3 id="email" style="font-size: 20px; color: #4B3A35">Self Discription: <br> {{discription}}</h3>	
+	<br><br><br><br><br><br><br><br><br><br><br>
+	<h3 id="email" style="font-size: 20px; color: #4B3A35">Friends List:</h3>	
+<main class="page-content">
+  <div class="card">
+    <div class="content">
+      <h2 class="title">Mountain View</h2>
+      <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
+      <button class="btn">View Trips</button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <h2 class="title">To The Beach</h2>
+      <p class="copy">Plan your next beach trip with these fabulous destinations</p>
+      <button class="btn">View Trips</button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <h2 class="title">Desert Destinations</h2>
+      <p class="copy">It's the desert you've always dreamed of</p>
+      <button class="btn">Book Now</button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <h2 class="title">Explore The Galaxy</h2>
+      <p class="copy">Seriously, straight up, just blast off into outer space today</p>
+      <button class="btn">Book Now</button>
+    </div>
+  </div>
+</main>
+	<form action="/share">
+    	<input type="submit" style="color:Black; background-color: #E5989B; border: none; font-weight: 400; font-weight: bold; width: 30%; height: 15%; border-radius: 15px" value="More Friends?">
+	</form>	
+	<br>
+	<h3 id="email" style="font-size: 20px; color: #4B3A35">Visited Restaurants:</h3>	
+	<br>
+<main class="page-content">
+  <div class="card">
+    <div class="content">
+      <h2 class="title">Mountain View</h2>
+      <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
+      <button class="btn">View Trips</button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <h2 class="title">To The Beach</h2>
+      <p class="copy">Plan your next beach trip with these fabulous destinations</p>
+      <button class="btn">View Trips</button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <h2 class="title">Desert Destinations</h2>
+      <p class="copy">It's the desert you've always dreamed of</p>
+      <button class="btn">Book Now</button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <h2 class="title">Explore The Galaxy</h2>
+      <p class="copy">Seriously, straight up, just blast off into outer space today</p>
+      <button class="btn">Book Now</button>
+    </div>
+  </div>
+</main>
+	<br>
+	<form action="/map">
+    	<input type="submit" style="color:Black; background-color: #E5989B; border: none; font-weight: 400; font-weight: bold; width: 30%; height: 15%; border-radius: 15px" value="More Restuarants?">
+	</form>	
+	<br>
+	<h3 id="email" style="font-size: 20px; color: #4B3A35">Riews:</h3>	
+<main class="page-content">
+  <div class="card">
+    <div class="content">
+      <h2 class="title">Mountain View</h2>
+      <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
+      <button class="btn">View Trips</button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <h2 class="title">To The Beach</h2>
+      <p class="copy">Plan your next beach trip with these fabulous destinations</p>
+      <button class="btn">View Trips</button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <h2 class="title">Desert Destinations</h2>
+      <p class="copy">It's the desert you've always dreamed of</p>
+      <button class="btn">Book Now</button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <h2 class="title">Explore The Galaxy</h2>
+      <p class="copy">Seriously, straight up, just blast off into outer space today</p>
+      <button class="btn">Book Now</button>
+    </div>
+  </div>
+</main>
+	<form action="#">
+    	<input type="submit" style="color:Black; background-color: #E5989B; border: none; font-weight: 400; font-weight: bold; width: 30%; height: 15%; border-radius: 15px" value="Add New Profile">
+	</form>	
+</div>
+
+
+
+
+</body>
+</html>

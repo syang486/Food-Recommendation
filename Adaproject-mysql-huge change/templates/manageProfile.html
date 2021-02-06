@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nom-Nom Manage Profile</title>
+	 <link rel="stylesheet" type="text/css" href="../static/profile.css">
+	 
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+</head>
+<script type="text/javascript">
+function myFunction(){
+    var msg = confirm("Are you sure that you want to log out?");
+    if (msg) {
+        window.location.href = "/logout";
+    }
+}
+</script>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light" style="width: 100%">
+		<div class="container-fluid">
+		    <a class="navbar-brand">Logo picture and app name: Nom-Nom</a>
+		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		    </button>
+		    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			    <li class="nav-item">
+				    <a class="nav-link active" aria-current="page" href="/welcomeback">Home</a>
+			    </li>
+			    <li class="nav-item">
+				    <a class="nav-link" href="/map">Our Map</a>
+			    </li>
+			    <li class="nav-item">
+				    <a class="nav-link" href="/community">Community</a>
+			    </li>
+				<li class="nav-item">
+					<a class="nav-link" href = "javascript:void(0)" onclick="myFunction()">Log Out</a>
+				</li>			
+
+                <!--
+			    <li class="nav-item dropdown">
+				    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				        Dropdown
+				    </a>
+				    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+				        <li><a class="dropdown-item" href="#">Action</a></li>
+				        <li><a class="dropdown-item" href="#">Another action</a></li>
+				        <li><hr class="dropdown-divider"></li>
+				        <li><a class="dropdown-item" href="#">Something else here</a></li>
+				    </ul>
+			    </li>
+			    <li class="nav-item">
+				    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+			    </li>                
+                -->
+
+			    </ul>
+			    <form class="d-flex">
+			        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+			        <button class="btn btn-outline-success" type="submit">Search</button>
+			    </form>
+		    </div>
+		</div>
+	</nav>
+
+<div id="img">
+<img src="{{ url_for('upload', filename=selfie) }}" style="width: 100px; height: 100px">
+</div>
+
+<h3 id="img-text" style="font-size: 20px; color: #4B3A35">Selfie</h3>
+
+
+
+<div class="profile" style="text-align: left; padding: 35px">
+
+	<h1 id="name" style="font-size: 40px; color: #4B3A35;font-weight: bolder">Manage Profile</h1>
+	<br>
+    <h3 id="email" style="font-size: 20px; color: #4B3A35">Email: {{email}}</h3>
+
+    <form action="/profilechanged" method="POST" enctype="multipart/form-data">
+	    <input type="file" style="position: absolute; right:25px; top:350px;" name="selfie">
+        <h3 id="email" style="font-size: 20px; color: #4B3A35">Name:
+        <input type="text" id="name" name="name" placeholder="name"></h3>
+        <h3 id="email" style="font-size: 20px; color: #4B3A35">Date of Birth:
+        <input type="text" id="birth" name="birth" placeholder="dd/mm/yyyy"></h3>
+        <h3 id="email" style="font-size: 20px; color: #4B3A35">Self Discription:<br>		
+		<textarea rows="10" cols="60" name = "discription" placeholder="Self Discription"></textarea></h3><p><br>
+    	<input type="submit" id="button"  value="Update the Profile">
+		<br>
+		<br>
+    </form>
+</div>
+
+
+</body>
+</html>

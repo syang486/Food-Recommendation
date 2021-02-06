@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nom-Nom Sign Up</title>
+	<link rel="stylesheet" type="text/css" href="../static/account.css">
+</head>
+<body>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <a href="/"><h2 class="inactive underlineHover"> Sign In </h2></a>
+    <h2 class="active">Sign Up </h2>
+    <br>
+    <h1>Get Started!</h1>
+
+    <!-- Login Form -->
+    <form action="/register" method="POST">
+      <input type="text" class="fadeIn second" name="name" placeholder="name">
+      <input type="email" class="fadeIn second" name="email" placeholder="email">
+      <input type="text" class="fadeIn third" name="birth" placeholder="dd/mm/yyyy">
+      <input type="password" class="fadeIn third" name="pass" placeholder="password">
+      <input type="submit" class="fadeIn fourth" value="Sign Up">
+    </form>
+
+  </div>
+</div>
+</body>
+</html>
