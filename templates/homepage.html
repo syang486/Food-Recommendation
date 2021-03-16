@@ -1,7 +1,84 @@
 <!DOCTYPE html>
 <html>
-<title>Food Recommend</title>
-<body>
-<h1>Home page</h1>
+<head>
+    <title>Welcome to Nom-Nom</title>
+	<link rel="stylesheet" type="text/css" href="../static/homepage.css">
+	 
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+</head>
+<body style="background-color: #FFDAB9">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container-fluid"  id="intro">
+		    <img id="logoImage" src="../uploads/logo.png" alt="logo">
+		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		    </button>
+		    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			    <li class="nav-item">
+				    <a class="nav-link active" aria-current="page" href="#intro">Introduction</a>
+			    </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#aboutus">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Instructions">Instructions</a>
+                </li>
+			    </ul>
+		    </div>
+		</div>
+	</nav>
+	
+	<!--Introduction part-->
+    <div class="main" style="background-color: #FFDAB9; text-align: left">
+	    <h1 id="name">Eating Is<br>Butter Together</h1>
+	    <br>
+	    <h3 id="email">Find, Share, and Recommend Restaurants with your friends</h3>
+	    <br>
+	    <br>
+	    <form action="/login">
+    	    <input type="submit" style="color:Black; background-color: #E5989B; border: none; font-weight: 400; font-weight: bold; width: 30%; height: 15%; border-radius: 15px" value="Start Now!">
+	    </form>
+    </div>
+
+    <!--About us part-->
+    <div class="ourStory" style="background-color: #FFF9F4; text-align: left; padding: 200px" id="aboutus">
+	    <br>
+	    <br>
+	    <br>
+	    <h1 id="name" style="font-size: 40px">Our Story</h1>
+	    <br>
+	    <h3 id="email" style="font-size: 20px">We are a group passionate about finding good food and fostering friendship</h3>
+	    <br>
+	    <br>
+    </div>
+
+    <!--Instructions part-->
+    <div class="howItWorks" style="background-color: #FFB9B9; padding: 200px" id="Instructions">
+	    <br>
+	    <br>
+	    <h1 id="name" style="font-size: 40px; font-weight: bolder; text-align: center">How It Works</h1>
+	    <br>
+	    <h3 id="email" style="font-size: 20px">Add in illustrations later here</h3>
+	    <br>
+	    <br>
+    </div>
+
+
+	<!--Our team part-->
+    <div class="outTeam" style="background-color: #FFF9F4; text-align: left; padding: 200px" id="ourteam">
+	    <br>
+	    <br>
+	    <br>
+	    <h1 id="name" style="font-size: 40px">Our Team</h1>
+	    <br>
+	    <h3 id="email" style="font-size: 20px">Upload selfie</h3>
+	    <br>
+	    <br>
+    </div>
+
+
 </body>
 </html>

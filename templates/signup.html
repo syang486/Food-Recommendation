@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Food Recommend</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'main.css') }}">
+	<title>Nom-Nom Sign Up</title>
+	<link rel="stylesheet" type="text/css" href="../static/account.css">
 </head>
-
 <body>
-    <div class="wrapper fadeInDown">
-        <div id="formContent">
-            <!-- Tabs Titles -->
-            <a href="/"><h2 class="inactive underlineHover"> Sign In </h2></a>
-            <h2 class="active"> Sign Up </h2>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <a href="/login"><h2 class="inactive underlineHover"> Sign In </h2></a>
+    <h2 class="active">Sign Up </h2>
+    <br>
+    <h1>Get Started!</h1>
 
-            <!-- Icon -->
-            <div class="fadeIn first">
-            <img src="{{ url_for('static', filename = 'user.png') }}" id="icon" alt="User Icon" />
-            </div>
+    <!-- Login Form -->
+    <form action="/register" method="POST">
+      <input type="text" class="fadeIn second" name="name" placeholder="name">
+      <input type="email" class="fadeIn second" name="email" placeholder="email">
+      <input type="text" class="fadeIn third" name="birth" placeholder="dd/mm/yyyy">
+      <input type="password" class="fadeIn third" name="pass" placeholder="password">
+      <input type="submit" class="fadeIn fourth" value="Sign Up">
+    </form>
 
-            <!-- Login Form -->
-            <form action="/register" method="POST">
-                <input type="text" id="name" class="fadeIn second" name="name" placeholder="name">
-                <input type="email" id="login" class="fadeIn second" name="email" placeholder="email">
-                <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
-                <input type="submit" class="fadeIn fourth" name="submit" value="Sign Up">
-            </form>
-        </div>
-    </div>
+  </div>
+</div>
 </body>
-
 </html>

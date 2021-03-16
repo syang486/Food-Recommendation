@@ -1,27 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Food Recommend</title>
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'main.css') }}">
+	<title>Nom-Nom Find Password</title>
+	<link rel="stylesheet" type="text/css" href="../static/account.css">
 </head>
 <body>
     <div class="wrapper fadeInDown">
         <div id="formContent">
-
-            <!-- Tabs Titles -->
-            <a href="/"><h2 class="incative underlineHover"> Sign In </h2>
-            <a href="/signup"><h2 class="inactive underlineHover"> Sign Up </h2></a>
-
-            <!-- Icon -->
-            <div class="fadeIn first">
-                <img src="{{ url_for('static', filename = 'user.png') }}" id="icon" alt="User Icon" />
-            </div>
-
-            <!-- Login Form -->
-            <form action="/resetpwd" method="POST">
+            <h1>Find Password</h1>
+            <!-- Forget Password Form -->
+            <form action="/findpwd" method="POST">
                 <input type="text" id="name" class="fadeIn second" name="name" placeholder="name">  
                 <input type="email" id="login" class="fadeIn second" name="email" placeholder="email">
-                <input type="submit" class="fadeIn fourth" name="submit" value="Reset the Password">
+                <input type="text" id="birth" class="fadeIn third" name="birth" placeholder="dd/mm/yyyy">
+                <input type="submit" class="fadeIn fourth" name="submit" value="Find the Password">
             </form>
 
   </div>
