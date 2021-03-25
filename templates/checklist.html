@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Nom-Nom Checklist</title>
-	 <link rel="stylesheet" type="text/css" href="../static/share.css">
+	 <link rel="stylesheet" type="text/css" href="../static/checklist.css">
 	 
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -17,10 +17,10 @@ function myFunction(){
 }
 </script>
 
-<body style="background-color: rgb(251,201,178);">
-	<nav class="navbar navbar-expand-lg navbar-light bg-light" style="width: 100%;">
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light" style="width: 100%">
 		<div class="container-fluid">
-		    <a class="navbar-brand">Logo picture and app name: Nom-Nom</a>
+		    <img id="logoImage" src="../uploads/logo.png" alt="logo">
 		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		    </button>
@@ -30,10 +30,10 @@ function myFunction(){
 				    <a class="nav-link active" aria-current="page" href="/welcomeback">Home</a>
 			    </li>
 			    <li class="nav-item">
-				    <a class="nav-link" href="/map">Our Map</a>
+				    <a class="nav-link" href="/map">Our Maps</a>
 			    </li>
 			    <li class="nav-item">
-				    <a class="nav-link" href="/community">Community</a>
+				    <a class="nav-link" href="/updateNews">Update News</a>
 			    </li>
 				<li class="nav-item">
 				    <a class="nav-link" href="/profile">Profile</a>
@@ -41,32 +41,25 @@ function myFunction(){
 				<li class="nav-item">
 					<a class="nav-link" href = "javascript:void(0)" onclick="myFunction()">Log Out</a>
 				</li>			
-
-                <!--
-			    <li class="nav-item dropdown">
-				    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-				        Dropdown
-				    </a>
-				    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-				        <li><a class="dropdown-item" href="#">Action</a></li>
-				        <li><a class="dropdown-item" href="#">Another action</a></li>
-				        <li><hr class="dropdown-divider"></li>
-				        <li><a class="dropdown-item" href="#">Something else here</a></li>
-				    </ul>
-			    </li>
-			    <li class="nav-item">
-				    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-			    </li>                
-                -->
-
 			    </ul>
-			    <form class="d-flex">
-			        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-			        <button class="btn btn-outline-success" type="submit">Search</button>
-			    </form>
 		    </div>
 		</div>
 	</nav>
+<br>
+<h1 id="name" style="text-align: center; font-size: 40px; color: #4B3A35;font-weight: bolder">{{topic}}</h1><br>
+{% for o in overview%}
+<h3 id="email" style="font-size: 20px; color: #4B3A35; text-align: center;">{{o[0]}}</h3>
+{% endfor %}
+<div class="profile" style="text-align: left; padding: 50px;">
+	<ul>
+	{% for point in points%}
+		{% for p in point%}
+			<h3 id="email" style="font-size: 20px; color: #4B3A35">Check Point {{loop.index}} : {{p}} <br>
+		{% endfor %}
+	{% endfor %}
+	</ul>
+	<br>
+</div>
 
 
 </body>

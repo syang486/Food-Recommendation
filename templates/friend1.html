@@ -35,6 +35,9 @@ function myFunction(){
 			    <li class="nav-item">
 				    <a class="nav-link" href="/updateNews">Update News</a>
 			    </li>
+                <li class="nav-item">
+				    <a class="nav-link" href="/profile">My Profile</a>
+			    </li>
 				<li class="nav-item">
 					<a class="nav-link" href = "javascript:void(0)" onclick="myFunction()">Log Out</a>
 				</li>			
@@ -45,37 +48,27 @@ function myFunction(){
 
 
 <div id="img">
-<img src="{{ url_for('upload', filename=selfie) }}" style="width: 100px; height: 100px">
+<img src="../uploads/user1.png" style="width: 100px; height: 100px">
 </div>
+<h3 id="img-text" style="font-size: 20px; color: #4B3A35; right: 120px;">Selfie</h3>
 
-
-<h3 id="img-text" style="font-size: 20px; color: #4B3A35">Selfie</h3>
-
-<form action="/manageProfile">
-    <input type="submit" id="button" style="right:150px; top:350px;" value="Manage Profile">
-</form>
-<form action="/changepwd">
-    <input type="submit" id="button" style="right:150px; top:450px;"value="Manage Password">
-</form>
 
 
 <div class="profile" style="text-align: left; padding: 75px">
-	<h1 id="name" style="font-size: 40px; color: #4B3A35;font-weight: bolder">{{name}}'s Profile</h1>
+	<h1 id="name" style="font-size: 40px; color: #4B3A35;font-weight: bolder">Jacob's Profile</h1>
 	
 	<br>
-	<h3 id="email" style="font-size: 20px; color: #4B3A35">Email: {{email}}</h3>
-	<h3 id="email" style="font-size: 20px; color: #4B3A35">Date of Birth: {{birth}}</h3>
-	<h3 id="email" style="font-size: 20px; color: #4B3A35">Self description: <br> {{description}}</h3>	
-	<br><br><br><br><br><br><br><br><br><br><br>
+	<h3 id="email" style="font-size: 20px; color: #4B3A35">Email: Jacob123@etc.com</h3>
+	<h3 id="email" style="font-size: 20px; color: #4B3A35">Self description: <br> A handsome boy!</h3>	
+	<br><br><br><br><br><br>
 	<h3 id="email" style="font-size: 20px; color: #4B3A35">Friends List:</h3>	
 
 <br>
 <table>
    <tr>
-       <td><a href="/friend1"><img src="../uploads/user1.png" style="margin: 0 12px; width: 200px; height: 200px;"></a></td>
-       <td><a href="/friend2"><img src="../uploads/user2.png" style="margin: 0 12px; width: 200px; height: 200px;"></a></td>
+    <td><a href="/profile"><img src="../uploads/user.jpg" style="margin: 0 15px; width: 200px; height: 200px;"></a></td>
+    <td><a href="/friend2"><img src="../uploads/user2.png" style="margin: 0 15px; width: 200px; height: 200px;"></a></td>
    </tr>
-</table>
 </table>
 <br>
 
@@ -92,6 +85,7 @@ function myFunction(){
 	<br>
 	<h3 id="email" style="font-size: 20px; color: #4B3A35">Visited Restaurants:</h3>	
 	<br>
+
 <main class="page-content">
   <div class="card">
     <div class="content">
@@ -139,16 +133,11 @@ function myFunction(){
 <br>
 <table>
    <tr>
-       <td><a href="/review2"><img src="../uploads/hamburger.jpg" style="margin: 0 12px; width: 232px; height: 350px;"></a></td>
-       <td><a href="/review4"><img src="../uploads/Sushi.jpg" style="margin: 0 12px; width: 232px; height: 350px;"></a></td>
+       <td><a href="/review1"><img src="../uploads/pizza.jpg" style="margin: 0 12px; width: 232px; height: 350px;"></a></td>
    </tr>
 </table>
 </table>
 <br>
-	<form action="/addreview">
-    	<input type="submit" style="color:Black; background-color: #E5989B; border: none; font-weight: 400; font-weight: bold; width: 30%; height: 15%; border-radius: 15px" value="Add New Review">
-	</form>	
-</div>
 
 
 

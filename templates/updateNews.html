@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Nom-Nom Welcome Back</title>
-	 <link rel="stylesheet" type="text/css" href="../static/welcomeback.css">
+	<title>Nom-Nom Update News</title>
+	 <link rel="stylesheet" type="text/css" href="../static/updateNews.css">
 	 
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -27,10 +27,10 @@ function myFunction(){
 		    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 			    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				<li class="nav-item">
-				    <a class="nav-link active" href="/map">Our Map</a>
+				    <a class="nav-link active" href="/welcomeback">Home</a>
 			    </li>
 				<li class="nav-item">
-					<a class="nav-link" href="/updateNews">Update News</a>
+					<a class="nav-link" href="/map">Our Maps</a>
 				</li>
 			    <li class="nav-item">
 				    <a class="nav-link" aria-current="page" href="/profile">Profile</a>
@@ -44,42 +44,16 @@ function myFunction(){
 	</nav>
 	
 <div class="welcomeback" style="background-color: rgb(252, 213, 195); text-align: center; padding: 50px">
+	<h1 id="name" style="font-size: 40px; color: #4B3A35;font-weight: bolder">Update News</h1>
+    <br>
+    <p>Version 0.1 Built the essential functions of the website. Formatted website according to the colour scheme and layout Hungry Hackers team designed</p>
 	<br>
+	<p>Version 0.2 Added text to the welcome page, applied user registration page, and connected pages together by navigation bar</p>
 	<br>
-	<h1 id="name" style="font-size: 40px; color: #4B3A35;font-weight: bolder">Welcome Back, {{name}}</h1>
+    <p>Version 0.3 Added additional pages to the website, including the implementation of shared list with friends, which is the key function of the website</p>
 	<br>
-	<h3 id="email" style="font-size: 20px; color: #4B3A35">start sharing with your friends!</h3>
-	<br>
-	<h1 id="name" style="font-size: 40px; color: #4B3A35;font-weight: bolder">Check List</h1>
-	<ul>
-	<br>
-	<ul>
-	<h2 id="email" style="font-size: 20px; color: #4B3A35">{{msg}}</h2>
-	{%for topics in checklist%}
-	<h2 id="email" style="font-size: 20px; color: #4B3A35">Topic {{loop.index}} : 
-	{%for topic in topics%}
-	{{topic}}
-	<br>
-	{% endfor %}
-	{% endfor %}
-	</ul>
-	<br>
-	<h2 id="email" style="font-size: 20px; color: #4B3A35">More detail on Checklist:</h2>
-	<form action="/checklist" method="POST">
-	<input type="text" name="topic" placeholder="Topic of Checklist">
-	<input type="submit">
-	</form>
-	<br>
-	<h3 id="email" style="font-size: 20px; color: #4B3A35">{{msg1}}</h3>
-	<br>
-	<h3 id="email" style="font-size: 20px; color: #4B3A35">Add a new Checklist? Click below! --></h3>
-	<a href="/addList">
-	<img id="addChecklist" src="../uploads/addchecklist.png" alt="Add more Checklist?">
-	</a>
-</div>
-
-
-
+    <p>Version 0.4 Updated text and images on welcome and user profile page of the website, added back to the top button</p>
+    </p>
 
 
 </body>

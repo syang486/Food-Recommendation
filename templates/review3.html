@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Nom-Nom Manage Profile</title>
+	<title>Nom-Nom Add Review</title>
 	 <link rel="stylesheet" type="text/css" href="../static/profile.css">
 	 
 	<!-- Bootstrap CSS -->
@@ -36,6 +36,9 @@ function myFunction(){
 				    <a class="nav-link" href="/updateNews">Update News</a>
 			    </li>
 				<li class="nav-item">
+				    <a class="nav-link" href="/friend2">Profile</a>
+			    </li>
+				<li class="nav-item">
 					<a class="nav-link" href = "javascript:void(0)" onclick="myFunction()">Log Out</a>
 				</li>			
 			    </ul>
@@ -44,31 +47,25 @@ function myFunction(){
 	</nav>
 
 <div id="img">
-<img src="{{ url_for('upload', filename=selfie) }}" style="width: 100px; height: 100px">
+<img src="../uploads/chatime.jpg" style="width: 140px; height: 110px">
 </div>
 
-<h3 id="img-text" style="font-size: 20px; color: #4B3A35">Selfie</h3>
+<h3 id="img-text" style="font-size: 20px; color: #4B3A35; right: 80px;">Photo for foods</h3>
 
 
 
 <div class="profile" style="text-align: left; padding: 35px">
 
-	<h1 id="name" style="font-size: 40px; color: #4B3A35;font-weight: bolder">Manage Profile</h1>
+	<h1 id="name" style="font-size: 40px; color: #4B3A35;font-weight: bolder">Review</h1>
 	<br>
-    <h3 id="email" style="font-size: 20px; color: #4B3A35">Email: {{email}}</h3>
-
-    <form action="/profilechanged" method="POST" enctype="multipart/form-data">
-	    <input type="file" style="position: absolute; right:25px; top:350px;" name="selfie">
-        <h3 id="email" style="font-size: 20px; color: #4B3A35">Name:
-        <input type="text" id="name" name="name" placeholder="name"></h3>
-        <h3 id="email" style="font-size: 20px; color: #4B3A35">Date of Birth:
-        <input type="text" id="birth" name="birth" placeholder="dd/mm/yyyy"></h3>
-        <h3 id="email" style="font-size: 20px; color: #4B3A35">Self description:<br>		
-		<textarea rows="10" cols="60" name = "description" placeholder="Self description"></textarea></h3><p><br>
-    	<input type="submit" id="button"  value="Update the Profile">
-		<br>
-		<br>
-    </form>
+    <h2 id="email" style="font-size: 20px; color: #4B3A35">Reviewer's Name: Ann</h3><br>
+    <h2 id="email" style="font-size: 20px; color: #4B3A35">Restaurant's Name: Chatime</h3><br>
+    <h2 id="email" style="font-size: 20px; color: #4B3A35">Rating: 5/5</h3><br>
+    <h2 id="email" style="font-size: 20px; color: #4B3A35">Review Paragraph:<br>		
+    <h3 id="email" style="font-size: 20px; color: #4B3A35">
+    The bubble tea place is my absolute favourite. <br>
+	The pearls have the perfect texture, not too chewy that it becomes rubbery, but also not too soft that there’s a mush texture. <br>
+	The pearls definitely make this place stands out amongst the so many bubble tea stores in Toronto.</h3>
 </div>
 
 

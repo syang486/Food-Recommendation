@@ -1,7 +1,7 @@
  
 <!DOCTYPE html>
 <html>
-  <title>Food Recommendation App</title>
+  <title>Nom-Nom Map</title>
  
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
@@ -50,8 +50,22 @@
         padding: 5px 11px 0px 11px;
       }
 </style>
- 
+ <script type="text/javascript">
+function myFunction(){
+    var msg = confirm("Are you sure that you want to log out?");
+    if (msg) {
+        window.location.href = "/logout";
+    }
+}
+</script>
     <script type="text/javascript">
+      var locations = [
+      ['Bondi Beach', -33.890542, 151.274856, 4],
+      ['Coogee Beach', -33.923036, 151.259052, 5],
+      ['Cronulla Beach', -34.028249, 151.157507, 3],
+      ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
+      ['Maroubra Beach', -33.950198, 151.259302, 1]
+      ];
       function initialize() {
         // map options
         var mapOptions = {
@@ -65,7 +79,7 @@
         var map = new google.maps.Map(document.getElementById("map_canvas"),
             mapOptions);
         var markers = [];
-      
+
       // create search box
       var searchBox = new google.maps.places.SearchBox(document.getElementById('pac-input'));
       map.controls[google.maps.ControlPosition.TOP_LEFT].push(document.getElementById('pac-input'));
@@ -74,7 +88,6 @@
       searchBox.set('map', null);
  
      var places = searchBox.getPlaces();
- 
      // get icon, name, and location for each place
      var bounds = new google.maps.LatLngBounds();
      var i, place;
@@ -102,6 +115,8 @@
           infowindow.setContent('<div id="content">'+
             nameOfPlace + 
             '<br>' + 
+            addressofPlace + 
+            '<br>' +
             rating + 
             '<br>' + 
             address + 
@@ -139,37 +154,25 @@
  
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navigate to different pages</a>
+        <img src="../uploads/logo.png" style="width: 7%; height: 5%;" alt="logo">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/welcome">Welcome Page</a>
+          <a class="nav-link active" aria-current="page" href="/welcomeback">Home</a>
           </li>
           <li class="nav-item">
-          <a class="nav-link" href="/map">Map</a>
-          </li>
-          <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
+          <a class="nav-link" href="/updateNews">Update News</a>
           </li>
           <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <a class="nav-link" href="/profile">Profile</a>
           </li>
+          <li class="nav-item">
+					<a class="nav-link" href = "javascript:void(0)" onclick="myFunction()">Log Out</a>
+				  </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
         </div>
       </div>
     </nav>

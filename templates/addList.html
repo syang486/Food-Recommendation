@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nom-Nom Add Checklist</title>
+	 <link rel="stylesheet" type="text/css" href="../static/checklist.css">
+	 
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+</head>
+<script type="text/javascript">
+function myFunction(){
+    var msg = confirm("Are you sure that you want to log out?");
+    if (msg) {
+        window.location.href = "/logout";
+    }
+}
+</script>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light" style="width: 100%">
+		<div class="container-fluid">
+		    <img id="logoImage" src="../uploads/logo.png" alt="logo">
+		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		    </button>
+		    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			    <li class="nav-item">
+				    <a class="nav-link active" aria-current="page" href="/welcomeback">Home</a>
+			    </li>
+			    <li class="nav-item">
+				    <a class="nav-link" href="/map">Our Maps</a>
+			    </li>
+			    <li class="nav-item">
+				    <a class="nav-link" href="/updateNews">Update News</a>
+			    </li>
+				<li class="nav-item">
+				    <a class="nav-link" href="/profile">Profile</a>
+			    </li>
+				<li class="nav-item">
+					<a class="nav-link" href = "javascript:void(0)" onclick="myFunction()">Log Out</a>
+				</li>			
+			    </ul>
+		    </div>
+		</div>
+	</nav>
+<br>
+<h1 id="name" style="text-align: center; font-size: 40px; color: #4B3A35;font-weight: bolder">New Checklist</h1>
+<div class="profile" style="text-align: left; padding: 35px">
+    <form action="/listAdded" method="POST" enctype="multipart/form-data">
+        <h3 id="email" style="font-size: 20px; color: #4B3A35">New Topic:
+        <input type="text" id="name" name="topic" placeholder="newTopic"></h3>
+		<h3 id="email" style="font-size: 20px; color: #4B3A35">Brief Overview:<br>		
+		<textarea rows="10" cols="60" name = "overview" placeholder="Brief Overview"></textarea></h3><p><br>
+        <h3 id="email" style="font-size: 20px; color: #4B3A35">Check Point 1:
+        <input type="text" id="name" name="point1" size="35" placeholder="check point 1"></h3>
+		<h3 id="email" style="font-size: 20px; color: #4B3A35">Check Point 2:
+        <input type="text" id="name" name="point2" size="35" placeholder="check point 2"></h3>
+        <h3 id="email" style="font-size: 20px; color: #4B3A35">Check Point 3:
+        <input type="text" id="name" name="point3" size="35" placeholder="check point 3"></h3>
+        <h3 id="email" style="font-size: 20px; color: #4B3A35">Check Point 4:
+        <input type="text" id="name" name="point4" size="35" placeholder="check point 4"></h3>
+        <h3 id="email" style="font-size: 20px; color: #4B3A35">Check Point 5:
+        <input type="text" id="name" name="point5" size="35" placeholder="check point 5"></h3>
+        <h3 id="email" style="font-size: 20px; color: #4B3A35">Check Point 6:
+        <input type="text" id="name" name="point6" size="35" placeholder="check point 6"></h3>
+		<br>
+		<br>		
+    	<input type="submit" id="button"  value="Add New Checklist">
+		<br>
+		<br>
+    </form>
+</div>
+
+
+</body>
+</html>
